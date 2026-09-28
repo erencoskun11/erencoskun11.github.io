@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eren Coşkun · Backend Software Engineer</title>
+<meta name="description" content="Eren Coşkun, backend software engineer (C#, .NET 10, ABP Framework): multi-tenant SaaS, event-driven messaging and reusable NuGet packages." data-i18n-attr="content:meta.description">
+<meta name="author" content="Eren Coşkun">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfaf6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111216" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Eren Coşkun · Backend Software Engineer">
+<meta property="og:description" content="C#, .NET 10, ABP Framework. Multi-tenant SaaS, event-driven messaging, reusable NuGet packages.">
+<meta property="og:url" content="https://erencoskun11.github.io/">
+<meta property="og:image" content="https://erencoskun11.github.io/assets/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+<header class="bar">
+  <div class="bar__inner wrap">
+    <a class="bar__name" href="#top">Eren Coşkun</a>
+    <nav class="bar__nav" aria-label="Sections" data-i18n-attr="aria-label:nav.main">
+      <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#packages" data-i18n="nav.packages">Packages</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.lang">
+      <button type="button" data-lang="tr" lang="tr" title="Türkçe" aria-pressed="false">TR</button>
+      <button type="button" data-lang="en" lang="en" title="English" aria-pressed="true">EN</button>
+      <button type="button" data-lang="de" lang="de" title="Deutsch" aria-pressed="false">DE</button>
+      <button type="button" data-lang="pl" lang="pl" title="Polski" aria-pressed="false">PL</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap" id="top">
+    <div class="hero__text">
+      <p class="eyebrow" lang="en">Backend Software Engineer</p>
+      <h1 class="hero__name">Eren Coşkun</h1>
+      <p class="hero__lead" data-i18n="hero.lead">I build multi-tenant backends in C# with .NET and ABP Framework. My own product, Kuafory, is live: one codebase serves eight sectors, two services talk through RabbitMQ, and more than 1,600 unit tests cover the code.</p>
+      <p class="hero__where" data-i18n="hero.where">Eskişehir, Türkiye · open to relocation and remote work</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="mailto:eren1coskun11@gmail.com" data-i18n="hero.cta.email">Email me</a>
+        <a class="btn" href="cv/Eren_Coskun_CV_EN.pdf" target="_blank" rel="noopener" data-cv-link data-i18n="hero.cta.cv">Download CV</a>
+        <a class="btn" href="https://github.com/erencoskun11" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/eren-co%C5%9Fkun-bb368226a/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <aside class="projects-card" aria-labelledby="hero-projects-title">
+      <h2 class="projects-card__title" id="hero-projects-title" data-i18n="hero.projects.title">Projects</h2>
+      <ul class="plist">
+        <li class="pitem">
+          <div class="pitem__head">
+            <a class="pitem__name" href="#projects">Kuafory</a>
+            <span class="live-badge" data-i18n="status.live">Live</span>
+          </div>
+          <p class="pitem__desc" data-i18n="hero.kuafory.desc">Online booking and business management for salons and clinics. Live in 8 sectors:</p>
+          <ul class="chips">
+            <li><a href="https://kuafor.randevuyeri.com.tr/" target="_blank" rel="noopener" data-i18n="sector.hair">Hair salon</a></li>
+            <li><a href="https://fizyoterapi.randevuyeri.com.tr/" target="_blank" rel="noopener" data-i18n="sector.physio">Physiotherapy</a></li>
+            <li><a href="https://dishekimi.randevuyeri.com.tr/" target="_blank" rel="noopener" data-i18n="sector.dental">Dentistry</a></li>
+            <li><a href="https://psikolog.randevuyeri.com.tr/" target="_blank" rel="noopener" data-i18n="sector.psych">Psychology</a></li>
+            <li><a href="https://veteriner.randevuyeri.com.tr/" target="_blank" rel="noopener" data-i18n="sector.vet">Veterinary</a></li>
+            <li><a href="https://diyetisyen.randevuyeri.com.tr/" target="_blank" rel="noopener" data-i18n="sector.diet">Dietitian</a></li>
+            <li><a href="https://nailart.randevuyeri.com.tr/" target="_blank" rel="noopener" data-i18n="sector.nail">Nail art</a></li>
+            <li><a href="https://lazer.randevuyeri.com.tr/" target="_blank" rel="noopener" data-i18n="sector.laser">Laser hair removal</a></li>
+          </ul>
+        </li>
+        <li class="pitem">
+          <div class="pitem__head">
+            <a class="pitem__name" href="#packages" data-i18n="pkg.title">ERN packages</a>
+            <span class="pitem__tag">NuGet</span>
+          </div>
+          <p class="pitem__desc" data-i18n="hero.ern.desc">7 reusable NuGet packages: messaging, multi-tenancy, authorization and more.</p>
+        </li>
+        <li class="pitem">
+          <div class="pitem__head">
+            <p class="pitem__name"><a href="https://github.com/erencoskun11/BankManagement" target="_blank" rel="noopener">BankManagement</a> · <a href="https://github.com/erencoskun11/BankApp" target="_blank" rel="noopener">BankApp</a></p>
+            <span class="pitem__tag">GitHub</span>
+          </div>
+          <p class="pitem__desc" data-i18n="hero.bank.desc">Two modular banking applications with ABP Framework, built during my internship at Piton.</p>
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="section" id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow" data-i18n="proj.eyebrow">Featured project</p>
+        <h2 class="section__title" id="projects-title">Kuafory</h2>
+        <p class="section__sub" data-i18n="proj.subtitle">Multi-sector booking and business management platform</p>
+        <p class="meta"><span>2025 – 2026</span><span class="live-badge" data-i18n="status.live">Live</span><span data-i18n="proj.kind">Personal product: design, development and deployment end to end</span></p>
+      </header>
+
+      <p class="lead" data-i18n="kf.b1">Layered, multi-tenant SaaS on ASP.NET Core / ABP Framework 10. One codebase serves eight sectors: hair salons, physiotherapy, dentistry, psychology, veterinary, dietetics, nail art and laser hair removal. Sector differences are handled with feature flags and a terminology dictionary; the code is not forked.</p>
+
+      <ul class="stats">
+        <li class="stat"><strong class="stat__value">8</strong><span class="stat__label" data-i18n="stat.sectors">sectors on one codebase</span></li>
+        <li class="stat"><strong class="stat__value">2</strong><span class="stat__label" data-i18n="stat.services">services: identity + app</span></li>
+        <li class="stat"><strong class="stat__value">7</strong><span class="stat__label" data-i18n="stat.packages">reusable NuGet packages</span></li>
+        <li class="stat"><strong class="stat__value" data-i18n="stat.tests.value">1,600+</strong><span class="stat__label" data-i18n="stat.tests">unit tests (xUnit)</span></li>
+      </ul>
+
+      <div class="biz" id="business">
+        <div class="biz__intro">
+          <h3 class="biz__title" data-i18n="biz.title">For businesses</h3>
+          <p class="biz__lead" data-i18n="biz.lead">Kuafory gives salons and clinics an online booking page and a simple panel to run the day.</p>
+          <p class="biz__ask" data-i18n="biz.ask">Would you like to use it in your business? Email me and I'll show you a demo.</p>
+          <a class="btn btn--primary" href="mailto:eren1coskun11@gmail.com?subject=Kuafory%20demo" data-i18n="biz.cta">Ask for a demo</a>
+        </div>
+        <ul class="bullets biz__list">
+          <li data-i18n="biz.f1">Customers book online, around the clock.</li>
+          <li data-i18n="biz.f2">Staff, working hours, days off and holidays in one place.</li>
+          <li data-i18n="biz.f3">Services, customer records and recurring appointments.</li>
+          <li data-i18n="biz.f4">Email and web push notifications for bookings.</li>
+          <li data-i18n="biz.f5">KVKK privacy notice and consent steps are built in.</li>
+        </ul>
+      </div>
+
+      <div class="split">
+        <div class="split__side">
+          <h3 class="h3" data-i18n="proj.live">Live sites</h3>
+          <ul class="sites">
+            <li><a class="site" href="https://kuafor.randevuyeri.com.tr/" target="_blank" rel="noopener"><span class="site__sector" data-i18n="sector.hair">Hair salon</span><span class="site__host">kuafor.randevuyeri.com.tr</span></a></li>
+            <li><a class="site" href="https://fizyoterapi.randevuyeri.com.tr/" target="_blank" rel="noopener"><span class="site__sector" data-i18n="sector.physio">Physiotherapy</span><span class="site__host">fizyoterapi.randevuyeri.com.tr</span></a></li>
+            <li><a class="site" href="https://dishekimi.randevuyeri.com.tr/" target="_blank" rel="noopener"><span class="site__sector" data-i18n="sector.dental">Dentistry</span><span class="site__host">dishekimi.randevuyeri.com.tr</span></a></li>
+            <li><a class="site" href="https://psikolog.randevuyeri.com.tr/" target="_blank" rel="noopener"><span class="site__sector" data-i18n="sector.psych">Psychology</span><span class="site__host">psikolog.randevuyeri.com.tr</span></a></li>
+            <li><a class="site" href="https://veteriner.randevuyeri.com.tr/" target="_blank" rel="noopener"><span class="site__sector" data-i18n="sector.vet">Veterinary</span><span class="site__host">veteriner.randevuyeri.com.tr</span></a></li>
+            <li><a class="site" href="https://diyetisyen.randevuyeri.com.tr/" target="_blank" rel="noopener"><span class="site__sector" data-i18n="sector.diet">Dietitian</span><span class="site__host">diyetisyen.randevuyeri.com.tr</span></a></li>
+            <li><a class="site" href="https://nailart.randevuyeri.com.tr/" target="_blank" rel="noopener"><span class="site__sector" data-i18n="sector.nail">Nail art</span><span class="site__host">nailart.randevuyeri.com.tr</span></a></li>
+            <li><a class="site" href="https://lazer.randevuyeri.com.tr/" target="_blank" rel="noopener"><span class="site__sector" data-i18n="sector.laser">Laser hair removal</span><span class="site__host">lazer.randevuyeri.com.tr</span></a></li>
+          </ul>
+          <p class="note" data-i18n="proj.langs">Interface in Turkish, English and German.</p>
+        </div>
+        <div class="split__main">
+          <h3 class="h3" data-i18n="proj.hl.title">Highlights</h3>
+          <ul class="bullets">
+            <li data-i18n="kf.b2">The identity service runs as a separate application. The two services communicate over HTTP and RabbitMQ, and their data is separated at schema level.</li>
+            <li data-i18n="kf.b3">Reliable messaging with the outbox/inbox pattern: events are written in the same transaction as the business record, and idempotent consumers prevent duplicate processing.</li>
+            <li data-i18n="kf.b4">Permission-based authorization and resource ownership checks; consent flows for KVKK (the Turkish data protection law, similar to the GDPR) and health data.</li>
+            <li data-i18n="kf.b5">Shared infrastructure extracted into 7 reusable NuGet packages: manager/repository bases, messaging, multi-tenancy, authorization.</li>
+            <li data-i18n="kf.b6">Deployed on my own server with Docker Compose: nginx, Let's Encrypt, PostgreSQL, Redis, RabbitMQ. More than 1,600 unit tests.</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="arch">
+        <button type="button" class="arch__zoom" data-open-arch aria-haspopup="dialog" aria-controls="arch-viewer">
+          <img width="1160" height="923" alt="Kuafory architecture diagram: eight sector domains, the ERN.Identity and Kuafory services connected through RabbitMQ, shared ERN packages, PostgreSQL with identity and public schemas, and Redis." data-i18n-attr="alt:proj.fig.alt" data-lang-src="assets/img/architecture-{lang}.png">
+          <noscript><img src="assets/img/architecture-en.png" width="1160" height="923" alt="Kuafory architecture diagram: eight sector domains, the ERN.Identity and Kuafory services connected through RabbitMQ, shared ERN packages, PostgreSQL with identity and public schemas, and Redis."></noscript>
+          <span class="arch__open" data-i18n="proj.fig.open">Open full size</span>
+        </button>
+        <figcaption class="arch__caption" data-i18n="proj.fig.caption">Architecture: two services, shared ERN packages, one PostgreSQL database with two schemas.</figcaption>
+      </figure>
+
+      <p class="stack"><span class="stack__label" data-i18n="proj.stack">Stack</span><span class="stack__items">ASP.NET Core · ABP Framework 10 · EF Core · PostgreSQL · Redis · RabbitMQ · OpenIddict · Docker Compose · nginx · Let's Encrypt · xUnit</span></p>
+    </div>
+  </section>
+
+  <section class="section" id="packages" aria-labelledby="packages-title">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow" data-i18n="pkg.eyebrow">NuGet packages</p>
+        <h2 class="section__title" id="packages-title" data-i18n="pkg.title">ERN packages</h2>
+        <p class="section__sub" data-i18n="pkg.lead">While building Kuafory, I moved the shared infrastructure into reusable NuGet packages. Both services use them in production.</p>
+      </header>
+      <ul class="pkgs">
+        <li class="pkg"><code class="pkg__name">ERN.CoreExtensions</code><span class="pkg__desc" data-i18n="pkg.core">Base classes for repositories and domain managers, plus a database schema check.</span></li>
+        <li class="pkg"><code class="pkg__name">ERN.Messaging</code><span class="pkg__desc" data-i18n="pkg.messaging">Outbox, inbox and idempotent consumers on top of RabbitMQ.</span></li>
+        <li class="pkg"><code class="pkg__name">ERN.Tenancy</code><span class="pkg__desc" data-i18n="pkg.tenancy">Tenant scope and claims, resolved by three middleware components.</span></li>
+        <li class="pkg"><code class="pkg__name">ERN.Authorization</code><span class="pkg__desc" data-i18n="pkg.authz">Resource ownership checks on top of permission-based authorization.</span></li>
+        <li class="pkg"><code class="pkg__name">ERN.Authentication</code><span class="pkg__desc" data-i18n="pkg.authn">Token validation for services that trust ERN.Identity.</span></li>
+        <li class="pkg"><code class="pkg__name">ERN.Identity.Contracts</code><span class="pkg__desc" data-i18n="pkg.contracts">Shared event contracts between services, such as TenantChangedEto.</span></li>
+        <li class="pkg"><code class="pkg__name">ERN.Conversations</code><span class="pkg__desc" data-i18n="pkg.conversations">In-app messaging with file attachments.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="experience" aria-labelledby="experience-title">
+    <div class="wrap">
+      <header class="section__head">
+        <h2 class="section__title" id="experience-title" data-i18n="exp.title">Experience</h2>
+      </header>
+      <ol class="jobs">
+        <li class="job">
+          <p class="job__when"><span>2025 – 2026</span><span class="live-badge" data-i18n="status.live">Live</span></p>
+          <div class="job__body">
+            <h3 class="job__title">Kuafory</h3>
+            <p class="job__org" data-i18n="exp.kuafory.role">Personal product</p>
+            <ul class="bullets">
+              <li data-i18n="exp.kuafory.b1">Designed, built and deployed a booking platform for eight sectors, from the data model to the production server.</li>
+            </ul>
+            <a class="job__link" href="#projects" data-i18n="exp.kuafory.more">Project details</a>
+          </div>
+        </li>
+        <li class="job">
+          <p class="job__when"><span data-i18n="exp.cozum.date">Feb – Aug 2026</span><span data-i18n="exp.cozum.len">7 months</span></p>
+          <div class="job__body">
+            <h3 class="job__title" data-i18n="exp.cozum.role">Backend Developer Intern</h3>
+            <p class="job__org">ÇözümTR Payment Systems · Eskişehir</p>
+            <ul class="bullets">
+              <li data-i18n="exp.cozum.b1">Backend development for the company's .NET / ABP Framework products.</li>
+              <li data-i18n="exp.cozum.b2">Built and maintained REST endpoints in a multi-tenant ABP codebase (C#, .NET, EF Core).</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <p class="job__when"><span data-i18n="exp.piton.date">Jun – Aug 2025</span><span data-i18n="exp.piton.len">3 months</span></p>
+          <div class="job__body">
+            <h3 class="job__title" data-i18n="exp.piton.role">Software Intern</h3>
+            <p class="job__org">Piton Technology · Eskişehir</p>
+            <ul class="bullets">
+              <li data-i18n="exp.piton.b1">Built two modular banking applications with ABP Framework (.NET).</li>
+            </ul>
+            <p class="repos"><span class="repos__label" data-i18n="exp.repos">Repositories</span><a href="https://github.com/erencoskun11/BankManagement" target="_blank" rel="noopener">BankManagement</a><a href="https://github.com/erencoskun11/BankApp" target="_blank" rel="noopener">BankApp</a></p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="skills" aria-labelledby="skills-title">
+    <div class="wrap profile">
+      <div class="profile__skills">
+        <h2 class="section__title section__title--small" id="skills-title" data-i18n="skills.title">Technical skills</h2>
+        <dl class="facts">
+          <div><dt data-i18n="skills.lang">Programming languages</dt><dd data-i18n="skills.lang.value">C# (3 years of experience), SQL, JavaScript</dd></div>
+          <div><dt data-i18n="skills.fw">Frameworks</dt><dd>ASP.NET Core Web API, .NET 10, ABP Framework 10, Entity Framework Core, xUnit</dd></div>
+          <div><dt data-i18n="skills.infra">Data &amp; infrastructure</dt><dd>PostgreSQL, Redis, RabbitMQ, Docker, Docker Compose, nginx</dd></div>
+          <div><dt data-i18n="skills.arch">Architecture</dt><dd data-i18n="skills.arch.value">Multi-tenancy, layered architecture, event-driven messaging, outbox/inbox pattern, permission-based authorization</dd></div>
+          <div><dt data-i18n="skills.tools">Tools</dt><dd data-i18n="skills.tools.value">JetBrains Rider, Git, GitHub, Linux server administration</dd></div>
+        </dl>
+      </div>
+      <div class="profile__side">
+        <h2 class="section__title section__title--small" data-i18n="edu.title">Education</h2>
+        <div class="edu">
+          <p class="edu__degree" data-i18n="edu.degree">B.Sc. in Computer Engineering</p>
+          <p class="edu__school" data-i18n="edu.school">Eskişehir Osmangazi University</p>
+          <p class="edu__year"><span>2022 – 2026</span> · <span data-i18n="edu.status">4th-year student</span></p>
+        </div>
+        <h2 class="section__title section__title--small" data-i18n="langs.title">Languages</h2>
+        <dl class="facts facts--tight">
+          <div><dt data-i18n="langs.en">English</dt><dd data-i18n="langs.en.level">B2+ / C1, advanced</dd></div>
+          <div><dt data-i18n="langs.tr">Turkish</dt><dd data-i18n="langs.tr.level">Native</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+        <h2 class="section__title" id="contact-title" data-i18n="contact.title">Contact details</h2>
+        <p class="section__sub" data-i18n="contact.lead">Write to me by email or on LinkedIn about backend roles or about Kuafory.</p>
+      </header>
+      <div class="mail">
+        <p class="h3" data-i18n="contact.email">Email</p>
+        <div class="mail__row">
+          <a class="mail__address" id="email-address" href="mailto:eren1coskun11@gmail.com">eren1coskun11@gmail.com</a>
+          <button type="button" class="btn btn--small" id="copy-email" data-i18n="contact.copy">Copy</button>
+          <span class="mail__status" id="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <dl class="facts contact__facts">
+        <div><dt lang="en">GitHub</dt><dd><a href="https://github.com/erencoskun11" target="_blank" rel="noopener">github.com/erencoskun11</a></dd></div>
+        <div><dt lang="en">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/eren-co%C5%9Fkun-bb368226a/" target="_blank" rel="noopener">linkedin.com/in/eren-coşkun-bb368226a</a></dd></div>
+        <div><dt data-i18n="contact.location">Location</dt><dd data-i18n="contact.where">Eskişehir, Türkiye</dd></div>
+        <div><dt data-i18n="contact.cv">CV (PDF)</dt><dd class="cv-links"><a href="cv/Eren_Coskun_CV_EN.pdf" hreflang="en" lang="en" target="_blank" rel="noopener">English</a><a href="cv/Eren_Coskun_CV_TR.pdf" hreflang="tr" lang="tr" target="_blank" rel="noopener">Türkçe</a><a href="cv/Eren_Coskun_CV_DE.pdf" hreflang="de" lang="de" target="_blank" rel="noopener">Deutsch</a><a href="cv/Eren_Coskun_CV_PL.pdf" hreflang="pl" lang="pl" target="_blank" rel="noopener">Polski</a></dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <p>© 2026 Eren Coşkun</p>
+    <p data-i18n="footer.note">No cookies, no tracking. Fonts are served from this site.</p>
+  </div>
+</footer>
+
+<dialog class="viewer" id="arch-viewer" aria-labelledby="arch-viewer-title">
+  <div class="viewer__bar">
+    <span class="viewer__title" id="arch-viewer-title" data-i18n="proj.fig.title">Kuafory architecture</span>
+    <button type="button" class="btn btn--small" data-close-arch data-i18n="proj.fig.close">Close</button>
+  </div>
+  <div class="viewer__scroll">
+    <img width="1160" height="923" alt="" data-lang-src="assets/img/architecture-{lang}.png">
+  </div>
+</dialog>
+</body>
+</html>

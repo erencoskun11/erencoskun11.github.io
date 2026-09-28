@@ -1,0 +1,14 @@
+{
+  "name": "erencoskun11.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "cv": "node tools/build-cv.mjs",
+    "diagram": "node tools/build-diagram.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0"
+  }
+}

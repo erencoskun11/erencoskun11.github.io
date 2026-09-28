@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kuafory architecture</title>
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: #fbfaf6;
+  }
+
+  .canvas {
+    position: relative;
+    width: 1160px;
+    padding: 30px 56px 40px;
+    background: #fbfaf6;
+    color: #1f2430;
+    font-family: "Archivo Variable", "Segoe UI", Arial, sans-serif;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 760;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+
+  .subtitle {
+    margin: 6px 0 0;
+    color: #5d6371;
+    font-size: 14.5px;
+    text-align: center;
+  }
+
+  .label {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin: 0;
+    padding-right: 8px;
+    background: #fbfaf6;
+    color: #9aa0ab;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 14px;
+    text-transform: uppercase;
+  }
+
+  .label em {
+    font-style: normal;
+    font-weight: 600;
+    text-transform: none;
+  }
+
+  .row-label {
+    margin-top: 40px;
+  }
+
+  .row-label--first {
+    margin-top: 26px;
+  }
+
+  .box {
+    position: relative;
+    z-index: 1;
+    border: 1.5px solid;
+    border-radius: 10px;
+  }
+
+  .domains {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px 16px;
+    margin-top: 10px;
+  }
+
+  .domain {
+    display: grid;
+    align-content: center;
+    height: 52px;
+    padding: 0 10px;
+    border-color: #c7d2fe;
+    background: #eef2ff;
+    text-align: center;
+  }
+
+  .domain b {
+    color: #3b3a9e;
+    font-size: 13.5px;
+    font-weight: 650;
+    line-height: 1.25;
+  }
+
+  .domain span {
+    color: #5b54e0;
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+
+  .note {
+    margin: 10px 0 0;
+    color: #7b8190;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: 420px 140px 420px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .service {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 4px;
+    height: 152px;
+    padding: 12px 18px;
+    text-align: center;
+  }
+
+  .service h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 720;
+  }
+
+  .service p {
+    margin: 0 0 6px;
+    font-size: 13px;
+  }
+
+  .service ul {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.55;
+    list-style: none;
+  }
+
+  .service li::before {
+    content: "• ";
+  }
+
+  .identity {
+    border-color: #a7f3d0;
+    background: #ecfdf5;
+    color: #0f6b4c;
+  }
+
+  .identity h2 {
+    color: #0b5d42;
+  }
+
+  .broker {
+    height: 78px;
+    padding: 8px;
+    border-color: #fecdd3;
+    background: #fff1f2;
+    color: #be123c;
+  }
+
+  .broker h2 {
+    color: #9f1239;
+    font-size: 14.5px;
+  }
+
+  .broker p {
+    margin: 0;
+    font-size: 11.5px;
+  }
+
+  .broker small {
+    font-size: 10px;
+  }
+
+  .app {
+    border-color: #fed7aa;
+    background: #fff7ed;
+    color: #b4460f;
+  }
+
+  .app h2 {
+    color: #9a3412;
+  }
+
+  .packages {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px 18px;
+    margin-top: 10px;
+  }
+
+  .pkg {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 3px;
+    height: 62px;
+    padding: 0 10px;
+    border-color: #ddd6fe;
+    background: #f5f3ff;
+    text-align: center;
+  }
+
+  .pkg b {
+    color: #5b21b6;
+    font-size: 13.5px;
+    font-weight: 680;
+  }
+
+  .pkg span {
+    color: #7c3aed;
+    font-size: 11.5px;
+  }
+
+  .data {
+    display: grid;
+    grid-template-columns: 700px 290px;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .pg {
+    height: 132px;
+    padding: 12px 30px 16px;
+    border-color: #bae6fd;
+    background: #f0f9ff;
+    text-align: center;
+  }
+
+  .pg h2 {
+    margin: 0;
+    color: #0c4a6e;
+    font-size: 14.5px;
+    font-weight: 700;
+  }
+
+  .schemas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 12px;
+  }
+
+  .schema {
+    display: grid;
+    align-content: center;
+    gap: 2px;
+    height: 74px;
+    border-color: #7dd3fc;
+    background: #ffffff;
+  }
+
+  .schema b {
+    color: #0369a1;
+    font-size: 13.5px;
+  }
+
+  .schema span {
+    color: #0284c7;
+    font-size: 11.5px;
+  }
+
+  .schema small {
+    color: #38bdf8;
+    font-size: 10px;
+  }
+
+  .redis {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 4px;
+    height: 132px;
+    border-color: #fde68a;
+    background: #fefce8;
+    color: #a16207;
+    text-align: center;
+  }
+
+  .redis h2 {
+    margin: 0 0 4px;
+    color: #92400e;
+    font-size: 14.5px;
+  }
+
+  .redis p {
+    margin: 0;
+    font-size: 12.5px;
+  }
+
+  .redis strong {
+    margin-top: 8px;
+    color: #78350f;
+    font-size: 12px;
+  }
+
+  .arrows {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+<div class="canvas" id="canvas">
+  <h1 class="title" data-t="title"></h1>
+  <p class="subtitle" data-t="subtitle"></p>
+
+  <p class="label row-label row-label--first" data-t="front"></p>
+  <div class="domains" id="domains"></div>
+  <p class="note" id="note" data-t="note"></p>
+
+  <p class="label row-label" data-t="services"></p>
+  <div class="services">
+    <div class="box service identity" id="identity">
+      <h2>ERN.Identity</h2>
+      <p data-t="identity.kind"></p>
+      <ul>
+        <li data-t="identity.1"></li>
+        <li data-t="identity.2"></li>
+        <li data-t="identity.3"></li>
+      </ul>
+    </div>
+    <div class="box service broker" id="broker">
+      <h2>RabbitMQ</h2>
+      <p>outbox / inbox</p>
+      <small>TenantChangedEto</small>
+    </div>
+    <div class="box service app" id="app">
+      <h2>Kuafory</h2>
+      <p data-t="app.kind"></p>
+      <ul>
+        <li data-t="app.1"></li>
+        <li data-t="app.2"></li>
+        <li data-t="app.3"></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="label row-label"><span data-t="packages"></span> <em data-t="packages.note"></em></p>
+  <div class="packages" id="packages">
+    <div class="box pkg"><b>ERN.Identity.Contracts</b><span data-t="pkg.contracts"></span></div>
+    <div class="box pkg"><b>ERN.Tenancy</b><span data-t="pkg.tenancy"></span></div>
+    <div class="box pkg"><b>ERN.Messaging</b><span data-t="pkg.messaging"></span></div>
+    <div class="box pkg" id="pkg-conversations"><b>ERN.Conversations</b><span data-t="pkg.conversations"></span></div>
+    <div class="box pkg"><b>ERN.Authorization</b><span data-t="pkg.authz"></span></div>
+    <div class="box pkg"><b>ERN.Authentication</b><span data-t="pkg.authn"></span></div>
+    <div class="box pkg"><b>ERN.CoreExtensions</b><span data-t="pkg.core"></span></div>
+  </div>
+
+  <p class="label row-label" data-t="data"></p>
+  <div class="data">
+    <div class="box pg" id="pg">
+      <h2 data-t="pg.title"></h2>
+      <div class="schemas">
+        <div class="box schema"><b data-t="schema.identity"></b><span data-t="schema.identity.meta"></span><small>AbpUsers, AbpRoles, AbpTenants…</small></div>
+        <div class="box schema"><b data-t="schema.public"></b><span data-t="schema.public.meta"></span><small>AppBookings, AppCustomers…</small></div>
+      </div>
+    </div>
+    <div class="box redis">
+      <h2>Redis</h2>
+      <p data-t="redis.1"></p>
+      <p data-t="redis.2"></p>
+      <strong data-t="redis.3"></strong>
+    </div>
+  </div>
+
+  <svg class="arrows" id="arrows" xmlns="http://www.w3.org/2000/svg"></svg>
+</div>
+
+<script src="../assets/js/i18n.js"></script>
+<script>
+  (() => {
+    "use strict";
+
+    const TEXT = {
+      en: {
+        title: "Kuafory — architecture",
+        subtitle: "Two services · shared ERN packages · one database, two schemas",
+        front: "Frontend",
+        note: "same files, different domain · the domain selects the sector (SectorHostResolver)",
+        login: "login",
+        services: "Services",
+        "identity.kind": "Identity service",
+        "identity.1": "opens branches (tenants)",
+        "identity.2": "users, roles, login",
+        "identity.3": "OpenIddict / tokens",
+        "app.kind": "Business application",
+        "app.1": "bookings, requests, customers",
+        "app.2": "staff, services, recurring series",
+        "app.3": "notifications (mail + web push)",
+        packages: "Shared ERN packages",
+        "packages.note": "(NuGet — used by both)",
+        "pkg.contracts": "TenantChangedEto + domain names",
+        "pkg.tenancy": "scope, 3 middleware, claims",
+        "pkg.messaging": "outbox / inbox / idempotency",
+        "pkg.conversations": "messaging + file attachments",
+        "pkg.authz": "resource ownership",
+        "pkg.authn": "token validation",
+        "pkg.core": "repo/manager bases, schema check",
+        data: "Data",
+        "pg.title": "PostgreSQL — one database: kuaforydb",
+        "schema.identity": "identity schema",
+        "schema.identity.meta": "22 tables — owned by ERN.Identity",
+        "schema.public": "public schema",
+        "schema.public.meta": "44 tables — owned by Kuafory",
+        "redis.1": "distributed cache",
+        "redis.2": "idempotency keys",
+        "redis.3": "Isolation boundary = TenantId"
+      },
+      tr: {
+        title: "Kuafory — mimari",
+        subtitle: "İki servis · ortak ERN paketleri · tek veritabanı, iki şema",
+        front: "Önyüz",
+        note: "aynı dosyalar, farklı alan adı · alan adı sektörü belirler (SectorHostResolver)",
+        login: "giriş",
+        services: "Servisler",
+        "identity.kind": "Kimlik servisi",
+        "identity.1": "şube (tenant) açar",
+        "identity.2": "kullanıcı, rol, giriş",
+        "identity.3": "OpenIddict / jeton",
+        "app.kind": "İş uygulaması",
+        "app.1": "randevu, talep, müşteri",
+        "app.2": "personel, hizmet, seri program",
+        "app.3": "bildirim (mail + web push)",
+        packages: "Ortak ERN paketleri",
+        "packages.note": "(NuGet — ikisi de kullanır)",
+        "pkg.contracts": "TenantChangedEto + alan adları",
+        "pkg.tenancy": "kapsam, 3 middleware, claim",
+        "pkg.messaging": "outbox / inbox / idempotency",
+        "pkg.conversations": "mesajlaşma + dosya eki",
+        "pkg.authz": "kaynak sahipliği",
+        "pkg.authn": "jeton doğrulama",
+        "pkg.core": "repo/manager tabanı, şema denetimi",
+        data: "Veri",
+        "pg.title": "PostgreSQL — tek veritabanı: kuaforydb",
+        "schema.identity": "kimlik şeması",
+        "schema.identity.meta": "22 tablo — sahibi ERN.Identity",
+        "schema.public": "public şeması",
+        "schema.public.meta": "44 tablo — sahibi Kuafory",
+        "redis.1": "dağıtık önbellek",
+        "redis.2": "idempotency anahtarları",
+        "redis.3": "İzolasyon sınırı = TenantId"
+      },
+      de: {
+        title: "Kuafory — Architektur",
+        subtitle: "Zwei Dienste · gemeinsame ERN-Pakete · eine Datenbank, zwei Schemas",
+        front: "Frontend",
+        note: "gleiche Dateien, andere Domain · die Domain bestimmt die Branche (SectorHostResolver)",
+        login: "Login",
+        services: "Dienste",
+        "identity.kind": "Identitätsdienst",
+        "identity.1": "legt Filialen (Mandanten) an",
+        "identity.2": "Benutzer, Rollen, Login",
+        "identity.3": "OpenIddict / Tokens",
+        "app.kind": "Geschäftsanwendung",
+        "app.1": "Termine, Anfragen, Kunden",
+        "app.2": "Personal, Leistungen, Terminserien",
+        "app.3": "Benachrichtigungen (Mail + Web-Push)",
+        packages: "Gemeinsame ERN-Pakete",
+        "packages.note": "(NuGet — von beiden genutzt)",
+        "pkg.contracts": "TenantChangedEto + Domainnamen",
+        "pkg.tenancy": "Kontext, 3 Middleware, Claims",
+        "pkg.messaging": "Outbox / Inbox / Idempotenz",
+        "pkg.conversations": "Nachrichten + Dateianhänge",
+        "pkg.authz": "Ressourcen-Eigentümerschaft",
+        "pkg.authn": "Token-Validierung",
+        "pkg.core": "Repo-/Manager-Basis, Schemaprüfung",
+        data: "Daten",
+        "pg.title": "PostgreSQL — eine Datenbank: kuaforydb",
+        "schema.identity": "Identity-Schema",
+        "schema.identity.meta": "22 Tabellen — gehört zu ERN.Identity",
+        "schema.public": "Public-Schema",
+        "schema.public.meta": "44 Tabellen — gehört zu Kuafory",
+        "redis.1": "verteilter Cache",
+        "redis.2": "Idempotenz-Schlüssel",
+        "redis.3": "Isolationsgrenze = TenantId"
+      },
+      pl: {
+        title: "Kuafory — architektura",
+        subtitle: "Dwie usługi · wspólne pakiety ERN · jedna baza, dwa schematy",
+        front: "Frontend",
+        note: "te same pliki, inna domena · domena wybiera branżę (SectorHostResolver)",
+        login: "logowanie",
+        services: "Usługi",
+        "identity.kind": "Usługa tożsamości",
+        "identity.1": "zakłada oddziały (tenanty)",
+        "identity.2": "użytkownicy, role, logowanie",
+        "identity.3": "OpenIddict / tokeny",
+        "app.kind": "Aplikacja biznesowa",
+        "app.1": "wizyty, zapytania, klienci",
+        "app.2": "personel, usługi, serie wizyt",
+        "app.3": "powiadomienia (mail + web push)",
+        packages: "Wspólne pakiety ERN",
+        "packages.note": "(NuGet — używają ich obie usługi)",
+        "pkg.contracts": "TenantChangedEto + nazwy domen",
+        "pkg.tenancy": "kontekst, 3 middleware, claimy",
+        "pkg.messaging": "outbox / inbox / idempotencja",
+        "pkg.conversations": "wiadomości + załączniki",
+        "pkg.authz": "własność zasobów",
+        "pkg.authn": "walidacja tokenów",
+        "pkg.core": "bazy repo/managerów, kontrola schematu",
+        data: "Dane",
+        "pg.title": "PostgreSQL — jedna baza: kuaforydb",
+        "schema.identity": "schemat identity",
+        "schema.identity.meta": "22 tabele — należy do ERN.Identity",
+        "schema.public": "schemat public",
+        "schema.public.meta": "44 tabele — należy do Kuafory",
+        "redis.1": "rozproszony cache",
+        "redis.2": "klucze idempotencji",
+        "redis.3": "Granica izolacji = TenantId"
+      }
+    };
+
+    const SECTORS = [
+      ["sector.hair", "kuafor"],
+      ["sector.physio", "fizyoterapi"],
+      ["sector.dental", "dishekimi"],
+      ["sector.psych", "psikolog"],
+      ["sector.vet", "veteriner"],
+      ["sector.diet", "diyetisyen"],
+      ["sector.nail", "nailart"],
+      ["sector.laser", "lazer"]
+    ];
+
+    const SVG = "http://www.w3.org/2000/svg";
+    const INK = "#6b7280";
+    const SOFT = "#a3aab6";
+
+    const requested = new URLSearchParams(window.location.search).get("lang");
+    const lang = TEXT[requested] ? requested : "en";
+    const text = TEXT[lang];
+    const sectorNames = (window.I18N && window.I18N[lang]) || {};
+
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-t]").forEach((element) => {
+      element.textContent = text[element.dataset.t];
+    });
+
+    const domains = document.getElementById("domains");
+    for (const [key, host] of SECTORS) {
+      const box = document.createElement("div");
+      box.className = "box domain";
+      const name = document.createElement("b");
+      name.textContent = sectorNames[key] || key;
+      const address = document.createElement("span");
+      address.textContent = `${host}.randevuyeri.com.tr`;
+      box.append(name, address);
+      domains.append(box);
+    }
+
+    const canvas = document.getElementById("canvas");
+    const svg = document.getElementById("arrows");
+
+    const box = (element) => {
+      const outer = canvas.getBoundingClientRect();
+      const inner = element.getBoundingClientRect();
+      const left = inner.left - outer.left;
+      const top = inner.top - outer.top;
+      return { left, top, right: left + inner.width, bottom: top + inner.height, cx: left + inner.width / 2, cy: top + inner.height / 2 };
+    };
+
+    const node = (name, attributes) => {
+      const element = document.createElementNS(SVG, name);
+      for (const [attribute, value] of Object.entries(attributes)) element.setAttribute(attribute, value);
+      return element;
+    };
+
+    const marker = (id, color) => {
+      const element = node("marker", { id, viewBox: "0 0 10 10", refX: "9", refY: "5", markerWidth: "7", markerHeight: "7", orient: "auto-start-reverse" });
+      element.append(node("path", { d: "M0,0 L10,5 L0,10 z", fill: color }));
+      return element;
+    };
+
+    const arrow = (x1, y1, x2, y2, { dashed = false, soft = false } = {}) => {
+      svg.append(node("line", {
+        x1, y1, x2, y2,
+        stroke: soft ? SOFT : INK,
+        "stroke-width": "1.6",
+        "stroke-dasharray": dashed ? "5 5" : "none",
+        "marker-end": `url(#${soft ? "head-soft" : "head"})`
+      }));
+    };
+
+    const label = (x, y, value) => {
+      const element = node("text", { x, y, fill: "#9aa0ab", "font-size": "11", "font-family": "Archivo Variable, Segoe UI, Arial, sans-serif", "text-anchor": "end" });
+      element.textContent = value;
+      svg.append(element);
+    };
+
+    const draw = () => {
+      const defs = node("defs", {});
+      defs.append(marker("head", INK), marker("head-soft", SOFT));
+      svg.append(defs);
+
+      const front = box(domains);
+      const identity = box(document.getElementById("identity"));
+      const broker = box(document.getElementById("broker"));
+      const app = box(document.getElementById("app"));
+      const packages = box(document.getElementById("packages"));
+      const conversations = box(document.getElementById("pkg-conversations"));
+      const pg = box(document.getElementById("pg"));
+
+      const start = front.bottom + 6;
+      arrow(identity.cx, start, identity.cx, identity.top - 3, { dashed: true });
+      label(identity.cx - 10, (start + identity.top) / 2 + 4, text.login);
+      arrow(app.cx, start, app.cx, app.top - 3);
+
+      arrow(identity.right + 3, broker.cy, broker.left - 3, broker.cy);
+      arrow(broker.right + 3, broker.cy, app.left - 3, broker.cy, { dashed: true });
+
+      arrow(identity.cx, identity.bottom + 3, identity.cx, packages.top - 3, { dashed: true, soft: true });
+      arrow(conversations.cx, app.bottom + 3, conversations.cx, packages.top - 3, { dashed: true, soft: true });
+
+      const leftX = pg.left + (pg.right - pg.left) * 0.27;
+      const rightX = pg.left + (pg.right - pg.left) * 0.73;
+      arrow(leftX, packages.bottom + 16, leftX, pg.top - 3);
+      arrow(rightX, packages.bottom + 16, rightX, pg.top - 3);
+    };
+
+    document.fonts.ready.then(() => {
+      draw();
+      document.body.dataset.ready = "1";
+    });
+  })();
+</script>
+</body>
+</html>
